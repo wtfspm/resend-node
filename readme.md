@@ -56,37 +56,6 @@ await resend.emails.send({
 });
 ```
 
-## Send email using React
-
-Start by creating your email template as a React component.
-
-```jsx
-import React from 'react';
-
-export default function EmailTemplate({ firstName, product }) {
-  return (
-    <div>
-      <h1>Welcome, {firstName}!</h1>
-      <p>Thanks for trying {product}. We’re thrilled to have you on board.</p>
-    </div>
-  );
-}
-```
-
-Then import the template component and pass it to the `react` property.
-
-```jsx
-import EmailTemplate from '../components/EmailTemplate';
-
-await resend.emails.send({
-  from: 'you@example.com',
-  to: 'user@gmail.com',
-  replyTo: 'you@example.com',
-  subject: 'hello world',
-  react: <EmailTemplate firstName="John" product="MyApp" />,
-});
-```
-
 ## License
 
 MIT License
